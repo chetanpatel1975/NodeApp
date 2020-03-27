@@ -1,11 +1,16 @@
 node {
     def app
 
-    stage('Clone repository') {
-        /* Cloning the Repository to our Workspace OK*/
+//    stage('Clone repository') {
+  //      /* Cloning the Repository to our Workspace OK*/
 
-        checkout scm
-    }
+  //      checkout scm
+  //  }
+	
+    stage('SCM Checkout'){
+     git credentialsId: 'git-credential', url: https://github.com/chetanpatel1975/NodeApp'
+   
+      }
 
     stage('Build image') {
         /* This builds the actual image */
